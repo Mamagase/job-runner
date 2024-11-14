@@ -48,6 +48,12 @@ This system includes:
     ```bash
     php artisan serve
 
+5. **Logging Setup in `storage/logs`**
+    Ensure that the log files exist in the `storage/logs/` directory. If they do not exist, you can create them using the following commands:
+    ```bash
+    touch storage/logs/background_jobs.log
+    touch storage/logs/background_jobs_errors.log
+
 # File Structure
 
 ```
@@ -93,8 +99,8 @@ project_root/
 
     ## How to run a background job using the `runBackgroundJob`
     ```php
-    runBackgroundJob(\App\Console\Jobs\ExampleJob::class, 'handle', 1, 0, 3, 'param1', 'param2');
-    runBackgroundJob(\App\Console\Jobs\ErrorJob::class, 'handle', 2, 5, 2);
+    runBackgroundJob(\App\Console\Jobs\ExampleJob::class, 'handle', 1, 0, 3, 'param1', 'param2')
+    runBackgroundJob(\App\Console\Jobs\ErrorJob::class, 'handle', 2, 5, 2)
 
 ## Explanation of the job 
     
